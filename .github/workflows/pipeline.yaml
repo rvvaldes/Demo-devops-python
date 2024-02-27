@@ -46,4 +46,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r app/requirements.txt
         pip install pylint
-        python -m pylint app
+        python -m pylint app --output-format=json:pylint.json,colorized
