@@ -36,11 +36,6 @@ jobs:
         python manage.py test
         cd ..
 
-  post-run:
-    needs: unit-test
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
     - name: Check if tests failed
       run: |
         if [ ${{ job.status }} != 'Success' ]; then exit 1; fi
