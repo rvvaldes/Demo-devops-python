@@ -46,5 +46,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r app/requirements.txt
         pip install pylint
-        cd app/
-        python -m pylint 
+        python -m pylint app
