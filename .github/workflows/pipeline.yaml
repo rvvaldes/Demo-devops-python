@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  unit-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,24 +29,6 @@ jobs:
         python manage.py makemigrations
         python manage.py migrate
         cd ..
-
-    - name: Persist artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-results
-        path: app
-
-  unit-test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Download artifacts
-      uses: actions/download-artifact@v2
-      with:
-        name: test-results
 
     - name: Run tests
       run: |
