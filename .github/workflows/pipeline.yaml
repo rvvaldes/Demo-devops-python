@@ -35,3 +35,12 @@ jobs:
         cd app
         python manage.py test
         cd ..
+
+    - name: Check if tests passed
+      run: |
+        if [ $? -eq 0 ]; then
+            echo "Unit tests passed successfully"
+        else
+            echo "Unit tests failed"
+            exit 1
+        fi
