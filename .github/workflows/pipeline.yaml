@@ -1,0 +1,42 @@
+name: pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Migrate database
+      run: |
+        py manage.py makemigrations
+        py manage.py migrate
+
+    - name: Run tests
+      run: |
+        python manage.py test
+
+  post-run:
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+    - name: Check if tests failed
+      run: |
+        if [ ${{ job.status }} != 'Success' ]; then exit 1; fi
