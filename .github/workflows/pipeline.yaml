@@ -35,7 +35,3 @@ jobs:
         cd app
         python manage.py test
         cd ..
-
-    - name: Check if tests failed
-      run: |
-        if [ ${{ job.status }} != 'Success' ]; then exit 1; fi
