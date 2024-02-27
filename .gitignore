@@ -1,6 +1,6 @@
-*.log
-*.pot
-*.pyc
-__pycache__/
+app/*.log
+app/*.pot
+app/*.pyc
+app/__pycache__/
 
-db.sqlite3
+app/db.sqlite3
