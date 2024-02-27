@@ -25,12 +25,12 @@ jobs:
 
     - name: Migrate database
       run: |
-        py app/manage.py makemigrations
-        py app/manage.py migrate
+        python app/manage.py makemigrations
+        python app/manage.py migrate
 
     - name: Run tests
       run: |
-        py app/manage.py test
+        python app/manage.py test
 
   post-run:
     needs: build
