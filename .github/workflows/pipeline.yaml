@@ -30,6 +30,7 @@ jobs:
 
 
   unit-test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Run tests
@@ -37,7 +38,7 @@ jobs:
         python app/manage.py test
 
   post-run:
-    needs: build
+    needs: unit-test
     runs-on: ubuntu-latest
     if: always()
     steps:
