@@ -1,4 +1,4 @@
-name: pipeline
+name: Pipeline
 
 on:
   push:
@@ -25,17 +25,34 @@ jobs:
 
     - name: Migrate database
       run: |
-        python app/manage.py makemigrations
-        python app/manage.py migrate
+        cd app
+        python manage.py makemigrations
+        python manage.py migrate
+        cd ..
 
+    - name: Persist artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: app
 
   unit-test:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Download artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: test-results
+
     - name: Run tests
       run: |
-        python app/manage.py test
+        cd app
+        python manage.py test
+        cd ..
 
   post-run:
     needs: unit-test
