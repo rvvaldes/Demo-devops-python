@@ -1,11 +1,10 @@
 import json
 from django.urls import reverse
 from rest_framework.test import APITestCase
-from models import User
+from .models import User
 
 
 class TestUserView(APITestCase):
-
     def setUp(self):
         user = User(name='Test1', dni='09876543210')
         user.save()
