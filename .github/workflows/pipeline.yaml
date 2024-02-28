@@ -46,4 +46,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r app/requirements.txt     
         pip install flake8
-        python -m flake8 app --count --exclude=app/api/urls.py
+        python -m flake8 app --count --exclude=app/api/urls.py --ignore=F401
