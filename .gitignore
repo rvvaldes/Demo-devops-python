@@ -2,7 +2,11 @@ app/*.log
 app/*.pot
 app/*.pyc
 app/__pycache__/
+app/*/__pycache__
+.pytest_cache
+app/.pytest_cache
+app/*/.pytest_cache
 
 app/db.sqlite3
-coverage
-app/coverage
+.coverage
+app/.coverage
