@@ -125,5 +125,4 @@ jobs:
       uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBECONFIG }}
-    - run: kubectl get pods
-           apply -f kubernetes/namespace.yaml
+    - run: kubectl get pods && kubectl version
