@@ -121,10 +121,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: deploy to cluster
+    - name: Install kubectl
       uses: tale/kubectl-action@v1
       with:
         base64-kube-config: ${{ secrets.KUBECONFIG }}
-    - run: |
-        kubectl get pods 
-        kubectl version
+    - name: Deploy to cluster    
+      run: |
+        kubectl apply -f kubernetes/namespace.yaml 
+        kubectl get ns
