@@ -128,4 +128,6 @@ jobs:
     - name: Deploy to cluster    
       run: |
         kubectl apply -f kubernetes/namespace.yaml 
-        kubectl get ns
+        kubectl apply -f kubernetes/deployment.yaml
+        kubectl apply -f kubernetes/service.yaml
+        kubectl apply -f kubernetes/hpa.yaml
