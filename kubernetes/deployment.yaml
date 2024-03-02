@@ -17,7 +17,7 @@ spec:
       - name: python-app
         image: rvvaldes/python-app
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         resources:
           limits:
             cpu: "100m"

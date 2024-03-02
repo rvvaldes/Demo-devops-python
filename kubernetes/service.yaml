@@ -5,7 +5,7 @@ metadata:
   namespace: python-app
 spec:
   ports:
-  - port: 8000
+  - port: 8080
     protocol: TCP
     targetPort: 8000
   selector:
