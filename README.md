@@ -1,4 +1,4 @@
-El pipeline de GitHub Actions realiza las siguientes tareas:
+**El pipeline de GitHub Actions realiza las siguientes tareas**:
 
 1. **Build y Validación del Código**:
    - Verifica que el código de la aplicación sea válido y que cumpla con los estándares de calidad.
