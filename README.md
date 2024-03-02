@@ -5,7 +5,7 @@
    - Instala las dependencias de Python y ejecuta una serie de comprobaciones, como migraciones de base de datos y verificaciones de código Django.
 
 2. **Pruebas Unitarias**:
-   - Ejecuta pruebas unitarias para asegurarse de que las funciones y características de la aplicación funcionen como se espera.
+   - Ejecuta pruebas unitarias para asegurarse de que las funciones y características de la aplicación funcionen como se espera, incluyendo la generación de informes de cobertura de pruebas.
 
 3. **Análisis de Código Estático**:
    - Utiliza la herramienta Flake8 para realizar un análisis estático del código Python y garantizar que cumpla con las convenciones de estilo y las mejores prácticas de codificación.
