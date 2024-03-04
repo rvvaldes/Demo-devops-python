@@ -6,7 +6,8 @@ on:
       - main
     paths-ignore:
       - 'terraform/**'
-      - 'README.md'  
+      - 'README.md'
+      - 'kubernetes/**'  
 
 jobs:
   build:
