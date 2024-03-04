@@ -10,3 +10,8 @@ app/*/.pytest_cache
 app/db.sqlite3
 .coverage
 app/.coverage
+
+terraform/.terraform
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.lock.hcl
